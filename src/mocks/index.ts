@@ -1,0 +1,30 @@
+import { DataElement } from 'types';
+
+const dataMock: DataElement[] = [
+  {
+    id: 100795229,
+    from: 'Kalkulator OC/AC - Onet <mailingi@onet.pl>',
+    sent_date: '2021-12-13 09:00:03',
+    is_unread: false,
+    subject: 'Zaoszczędź! OC już od 230 zł',
+    snippet: ''
+  },
+  {
+    id: 100795227,
+    from: 'Walutomat - Onet <mailingi@onet.pl>',
+    sent_date: '2021-12-13 09:00:02',
+    is_unread: true,
+    subject: 'Wymień walutę szybko i tanio',
+    snippet: 'Odbierz 50% rabatu na wymianę online'
+  },
+  {
+    id: 100795228,
+    from: 'Walutomat - Onet <mailingi@onet.pl>',
+    sent_date: '2021-12-13 09:00:02',
+    is_unread: true,
+    subject: '1Wymień walutę szybko i tanio',
+    snippet: 'Odbierz 50% rabatu na wymianę online'
+  }
+];
+
+export default dataMock;
