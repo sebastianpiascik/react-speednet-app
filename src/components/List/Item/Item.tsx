@@ -1,7 +1,7 @@
 import React, { VFC, memo } from 'react';
-import { Link } from 'react-router-dom';
 
 import Checkbox from 'elements/Checkbox';
+import Link from 'elements/Link';
 
 import { StyledWrapper } from './Item.styled';
 
@@ -15,7 +15,7 @@ type Props = {
 const Item: VFC<Props> = ({ id, subject, isRead, handleChange }) => (
   <StyledWrapper>
     <Checkbox label={subject} value={isRead} onChange={() => handleChange(id)} />
-    <Link to={`details/${id}`}>Details</Link>
+    <Link to={`details/${id}`}>details</Link>
   </StyledWrapper>
 );
 

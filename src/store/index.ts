@@ -5,6 +5,7 @@ import dataMock from 'mocks';
 type StateType = {
   readItemIds: number[];
   addToRead: (id: number) => void;
+  getReadItemsNumber: () => void;
   removeFromRead: (id: number) => void;
   checkIsRead: (id: number) => boolean;
 };
@@ -17,6 +18,7 @@ const useStore = create<StateType>((set, get) => ({
 
     return readItemIds.includes(id);
   },
+  getReadItemsNumber: () => get().readItemIds.length,
   removeFromRead: (id: number) =>
     set((state) => {
       const itemIndex = state.readItemIds.indexOf(id);

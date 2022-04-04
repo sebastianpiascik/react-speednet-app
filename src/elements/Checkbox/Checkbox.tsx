@@ -1,5 +1,7 @@
 import React, { VFC } from 'react';
 
+import { StyledLabel, StyledInput } from './Checkbox.styled';
+
 type Props = {
   value: boolean;
   onChange: VoidFunction;
@@ -7,10 +9,10 @@ type Props = {
 };
 
 const Checkbox: VFC<Props> = ({ label, value, onChange }) => (
-  <label>
-    <input type="checkbox" checked={value} onChange={onChange} />
+  <StyledLabel>
+    <StyledInput type="checkbox" checked={value} onChange={onChange} />
     {label}
-  </label>
+  </StyledLabel>
 );
 
 export default Checkbox;

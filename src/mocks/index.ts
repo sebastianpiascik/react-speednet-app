@@ -1,30 +1,14 @@
+import faker from '@faker-js/faker/locale/pl';
+
 import { DataElement } from 'types';
 
-const dataMock: DataElement[] = [
-  {
-    id: 100795229,
-    from: 'Kalkulator OC/AC - Onet <mailingi@onet.pl>',
-    sent_date: '2021-12-13 09:00:03',
-    is_unread: false,
-    subject: 'Zaoszczędź! OC już od 230 zł',
-    snippet: ''
-  },
-  {
-    id: 100795227,
-    from: 'Walutomat - Onet <mailingi@onet.pl>',
-    sent_date: '2021-12-13 09:00:02',
-    is_unread: true,
-    subject: 'Wymień walutę szybko i tanio',
-    snippet: 'Odbierz 50% rabatu na wymianę online'
-  },
-  {
-    id: 100795228,
-    from: 'Walutomat - Onet <mailingi@onet.pl>',
-    sent_date: '2021-12-13 09:00:02',
-    is_unread: true,
-    subject: '1Wymień walutę szybko i tanio',
-    snippet: 'Odbierz 50% rabatu na wymianę online'
-  }
-];
+const dataMock: DataElement[] = Array.from(Array(6).keys()).map((key) => ({
+  id: key,
+  from: `${faker.name.firstName()} ${faker.name.lastName()} <${faker.internet.email()}>`,
+  sent_date: faker.date.future(),
+  is_unread: faker.datatype.boolean(),
+  subject: faker.lorem.sentence(6),
+  snippet: faker.lorem.sentence()
+}));
 
 export default dataMock;

@@ -2,14 +2,14 @@ import React, { useCallback, VFC } from 'react';
 
 import Item from './Item';
 
-import { StyledWrapper } from './List.styled';
+import { StyledWrapper, StyledParagraph } from './List.styled';
 
 import useStore from 'store';
 
 import dataMock from 'mocks';
 
 const List: VFC = () => {
-  const { checkIsRead, addToRead, removeFromRead } = useStore();
+  const { getReadItemsNumber, checkIsRead, addToRead, removeFromRead } = useStore();
 
   const handleChange = useCallback(
     (id: number) => {
@@ -24,6 +24,7 @@ const List: VFC = () => {
 
   return (
     <StyledWrapper>
+      <StyledParagraph>{getReadItemsNumber()} read elements</StyledParagraph>
       {dataMock.map((el) => (
         <Item key={el.id} isRead={checkIsRead(el.id)} handleChange={handleChange} {...el} />
       ))}
